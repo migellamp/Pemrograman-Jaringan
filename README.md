@@ -1,8 +1,8 @@
 # Progjar-A
 ## Dokumentasi Tugas Pemrograman Jaringan A
 
-Tugas 1 (Individu)
-Tugas 2-5 (Kelompok)
+#Tugas 1 (Individu)
+#Tugas 2-5 (Kelompok)
 
 Kelompok 8
 05111940000141 - Muhammad Farhan Haykal
