@@ -1,0 +1,12 @@
+Soal:
+a. Generator bertugas membangkitkan bilangan random (0..2) atau (0..1) 
+>> num = random.randint(0, 2) 
+b. Executor mengeksekusi: 
+>> n1 = random.randint(1, 99000) 
+>> n2 = random.randint(1, 1000) 
+>> sql = ‘’’select count(*) from MOCKDATA where (ID>=%s AND ID<=%s) AND 
+mod(length(FirstNameLastName),3) = %s’’’ % (n1, n1+n2, num)  untuk soal (a) 
+c. Logger menampilkan query yang dieksekusi dan hasilnya 
+>> n1=200, n2==250, num=0, hasil=3456  karena num=0, ini berasal dari executor #0 
+d. Untuk menyederhanakan, program dimatikan dengan menggunakan time.sleep(n).. 
+>>> time.sleep(5) 
