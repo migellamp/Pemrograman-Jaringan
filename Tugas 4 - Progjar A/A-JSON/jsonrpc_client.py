@@ -16,7 +16,6 @@ def main():
         print('Input Client :')
         input_ping = input("> ")
         first_split = input_ping.split()
-        # msg = "aku sayang kamu"
         # print(proxy.lengths(input_ping))
 
         if first_split[0] == "get":
