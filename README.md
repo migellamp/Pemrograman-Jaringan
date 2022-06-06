@@ -1,5 +1,5 @@
 # Progjar-A
-Dokumentasi Tugas Pemrograman Jaringan A
+## Dokumentasi Tugas Pemrograman Jaringan A
 
 Tugas 1 (Individu)
 Tugas 2-5 (Kelompok)
