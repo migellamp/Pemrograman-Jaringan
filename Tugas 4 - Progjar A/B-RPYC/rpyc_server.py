@@ -27,10 +27,8 @@ class MyService(rpyc.Service):
                 mainPath = '*'
             else:
                 mainPath = commands[1]
-            print(mainPath)
             files = glob.glob(mainPath, recursive=True)
-            print(files)
-            basenames = " "
+            basenames = ""
             for file in files:
                 basenames += os.path.basename(file) + '\n'
             return basenames
@@ -73,6 +71,6 @@ class MyService(rpyc.Service):
 
         elif commands[0] == "quit":
             sys.exit(0)
-
+            
 if __name__ == '__main__':
     main()

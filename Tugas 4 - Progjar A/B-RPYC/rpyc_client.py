@@ -14,35 +14,11 @@ def main():
         print("Input Client: ")
         input_msg = input("> ")
         first_split = input_msg.split()
+        print(proxy.root.exeCommand(input_msg))
         
-        if first_split[0] == "ping":
-            print(proxy.root.exeCommand(input_msg))
-
-        elif first_split[0] == "ls":
-            print(proxy.root.exeCommand(input_msg))
-
-        elif first_split[0] == "count":
-            print(proxy.root.exeCommand(input_msg))
-
-        elif first_split[0] == "get":
-            print(proxy.root.exeCommand(input_msg))
-            
-        elif first_split[0] == "put":
-            print(proxy.root.exeCommand(input_msg))
-
-        elif first_split[0] == "quit":
+        if first_split[0] == "quit":
             proxy.root.exeCommand(input_msg)
-            # time.sleep(1)
-            # print("client shutdown...")
             sys.exit(0)
-
-
-        # fileobj = open('testfile.txt')
-        # linecount = proxy.root.line_counter(fileobj, noisy)
-        # print('The number of lines in the file was', linecount)
-
-# def noisy(string):
-#     print('Noisy:', repr(string))
 
 if __name__ == '__main__':
     main()
