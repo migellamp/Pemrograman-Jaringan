@@ -19,16 +19,15 @@ def main():
             print(proxy.root.exeCommand(input_msg))
 
         elif first_split[0] == "ls":
-            if len(first_split) == 1:
-                print(proxy.root.exeCommand(input_msg))
-            # print(proxy.root.exeCommand(input_msg))
-            else :
-                print(proxy.root.exeCommand(input_msg))
+            print(proxy.root.exeCommand(input_msg))
 
         elif first_split[0] == "count":
             print(proxy.root.exeCommand(input_msg))
 
         elif first_split[0] == "get":
+            print(proxy.root.exeCommand(input_msg))
+            
+        elif first_split[0] == "put":
             print(proxy.root.exeCommand(input_msg))
 
         elif first_split[0] == "quit":

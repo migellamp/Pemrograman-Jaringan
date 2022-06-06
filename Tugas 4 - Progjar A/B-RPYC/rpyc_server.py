@@ -7,8 +7,6 @@
 import rpyc
 import sys
 import glob
-import pathlib
-import time
 import os
 
 def main():
@@ -21,7 +19,7 @@ class MyService(rpyc.Service):
         commands = text.split()
         if commands[0] == "ping":
             remove_ping = commands[1:]
-            join_now = ' '.join(remove_ping)
+            join_now = ' '.join(remove_ping) + '\n'
             return join_now
 
         elif commands[0] == "ls":
@@ -29,12 +27,13 @@ class MyService(rpyc.Service):
                 mainPath = '*'
             else:
                 mainPath = commands[1]
-
-            files = glob.glob(mainPath)
-            basename = ''
+            print(mainPath)
+            files = glob.glob(mainPath, recursive=True)
+            print(files)
+            basenames = " "
             for file in files:
-                basename += os.path.basename(file) + '\n'
-            return basename
+                basenames += os.path.basename(file) + '\n'
+            return basenames
 
         elif commands[0] == "count":
             if len(commands) == 1:
@@ -62,17 +61,18 @@ class MyService(rpyc.Service):
             getFile = "fetch: " + path + " size: " + str(size) + " lokal: " + file_name
             return getFile
 
+        elif commands[0] == "put":
+            location = ' '.join(commands[2:])
+            filenames = str(commands[1])
+            fullLocation = os.path.join(location,filenames)
+            path = str(fullLocation)
+            f=open(path, "w+")
+            f.close()
+            messages = "put: " + filenames + " lokal: " + path
+            return messages
+
         elif commands[0] == "quit":
-            # message = "server shutdown...\n"
-            # print(message)
-            # time.sleep(2)
             sys.exit(0)
-            # t.close(0)
-
-
-
-
-
 
 if __name__ == '__main__':
     main()
